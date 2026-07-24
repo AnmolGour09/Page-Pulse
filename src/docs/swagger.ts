@@ -10,10 +10,13 @@ const options: swaggerJsdoc.Options = {
       description: "Website Audit API",
     },
     servers: [
-      {
-        url: process.env.BASE_URL || "http://localhost:5000",
-      },
-    ],
+  {
+    url:
+      process.env.NODE_ENV === "production"
+        ? "https://page-pulse-6y7f.onrender.com"
+        : "http://localhost:5000",
+  },
+],
   },
 
   apis:
